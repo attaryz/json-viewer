@@ -1,0 +1,13 @@
+{
+  "name": "json-viewer",
+  "version": "1.0.0",
+  "description": "A powerful JSON visualization tool with Tree, Table, and Diagram views",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 8080",
+    "deploy": "vercel --prod"
+  },
+  "keywords": ["json", "viewer", "visualizer", "tree", "table", "diagram"],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,117 @@
+/* Table View Styles */
+.table-selector {
+    background: #2d2d2d;
+    border-bottom: 1px solid #3e3e3e;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.table-selector label {
+    font-size: 12px;
+    color: #808080;
+}
+
+.table-selector select {
+    background: #3c3c3c;
+    border: 1px solid #5c5c5c;
+    color: #d4d4d4;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    flex: 1;
+}
+
+.table-container {
+    overflow: auto;
+    flex: 1;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid #3e3e3e;
+    padding: 8px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.data-table th {
+    background: #2d2d2d;
+    color: #9cdcfe;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.data-table tr:nth-child(even) {
+    background: #252525;
+}
+
+.data-table tr:hover {
+    background: #2a2a2a;
+}
+
+.data-table td {
+    max-width: 400px;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.cell-string { color: #ce9178; }
+.cell-number { color: #b5cea8; }
+.cell-boolean { color: #569cd6; }
+.cell-null { color: #569cd6; font-style: italic; }
+.cell-object { 
+    color: #808080; 
+    font-style: italic; 
+    cursor: pointer;
+    text-decoration: underline;
+}
+.cell-object:hover {
+    color: #0e639c;
+}
+
+.cell-expanded {
+    font-style: normal;
+    cursor: default;
+    text-decoration: none;
+}
+
+.cell-content {
+    max-height: 300px;
+    overflow: auto;
+    background: #1e1e1e;
+    padding: 8px;
+    margin-top: 4px;
+    border-radius: 4px;
+    border: 1px solid #3e3e3e;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 11px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+
+.expand-btn {
+    display: inline-block;
+    margin-left: 4px;
+    padding: 2px 6px;
+    background: #3c3c3c;
+    border: 1px solid #5c5c5c;
+    border-radius: 3px;
+    font-size: 10px;
+    cursor: pointer;
+    color: #d4d4d4;
+}
+
+.expand-btn:hover {
+    background: #4c4c4c;
+}

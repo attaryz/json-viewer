@@ -1,21 +1,19 @@
-# JSON Viewer
+# JSON Viewer - Project Structure
 
-A lightweight web application for visualizing JSON data with multiple render views and interactive controls.
+## Overview
+A powerful JSON visualization tool with Tree, Table, and Diagram views, featuring zoom/pan capabilities for large datasets.
 
----
-
-## Directory Layout
-
-The project root contains the following key files and folders:
+## File Structure
 
 ```
-/
-├── index.html              # Main entry point (loads app.js and styles)
+jsonr/
+├── index.html              # Main entry point
+├── json-viewer.html        # Legacy single-file version (can be removed)
 ├── css/
 │   ├── styles.css          # Base styles and layout
-│   ├── tree-view.css       # Styles for the tree view
-│   ├── table-view.css      # Styles for the table view
-│   └── diagram-view.css    # Zoom/pan controls for diagram view
+│   ├── tree-view.css       # Tree view specific styles
+│   ├── table-view.css      # Table view specific styles
+│   └── diagram-view.css    # Diagram view with zoom controls
 └── js/
     ├── app.js              # Main application controller
     ├── tree-view.js        # Tree view renderer
@@ -23,61 +21,50 @@ The project root contains the following key files and folders:
     └── diagram-view.js     # Diagram view with zoom/pan
 ```
 
-
----
-
 ## Features
 
-### Tree View
-Implemented in `js/tree-view.js`.
-- Displays JSON hierarchies with expandable/collapsible nodes
-- Syntax highlighting for values
-- Quick "View as Table" option for arrays
+### Tree View (`tree-view.js`)
+- Hierarchical JSON visualization
+- Collapsible nodes
+- Syntax highlighting
+- "View as Table" buttons for arrays
 
-### Table View
-Implemented in `js/table-view.js`.
-- Renders arrays of objects in a spreadsheet-like format
-- Supports selecting nested array paths
-- Cells can expand to show nested objects/arrays
-- Syntax highlighting within cells
+### Table View (`table-view.js`)
+- Tabular display for arrays of objects
+- Path selector for nested arrays
+- Expandable nested objects/arrays in cells
+- Syntax highlighted cell content
 
-### Diagram View
-Implemented in `js/diagram-view.js`.
-- Renders JSON as diagrams powered by Mermaid.js
-- Three diagram types: **Tree Hierarchy**, **Entity Relationship**, **Mind Map**
-- Integrated zoom & pan controls (see below)
+### Diagram View (`diagram-view.js`)
+- **Zoom & Pan Controls**:
+  - Mouse wheel to zoom in/out
+  - Click and drag to pan around
+  - Zoom controls (+ / - / reset) in bottom-right
+  - Zoom level indicator
+- Three diagram types:
+  - Tree Hierarchy
+  - Entity Relationship
+  - Mind Map
+- Powered by Mermaid.js
 
----
+## Zoom & Pan Features
 
-## Diagram Zoom & Pan
-
-Users can interact with diagrams using:
-
-1. **Zoom**
-   - Mouse wheel or `+` / `−` buttons to adjust scale (10 – 300%)
-2. **Pan**
-   - Click‑and‑drag to move the viewport
-3. **Reset**
-   - `⟲` button restores original position and zoom
-4. **Indicator**
-   - Current zoom level displayed in the control overlay
-
-Transitions are smooth to maintain context when navigating large graphs.
-
----
+The diagram view includes:
+- **Zoom In/Out**: Use `+` and `−` buttons or mouse wheel
+- **Pan**: Click and drag to move around large diagrams
+- **Reset**: `⟲` button to restore original position
+- **Zoom Level**: Shows current zoom percentage (10%-300%)
+- **Smooth Transitions**: Fluid zoom and pan animations
 
 ## Usage
 
-Open `index.html` in any modern browser. The app is self‑contained except for the Mermaid.js CDN dependency used by the diagram view.
+Simply open `index.html` in a browser. All files are self-contained except for Mermaid.js which loads from CDN.
 
----
+## Maintenance
 
-## Maintenance Notes
-
-- **Tree rendering**: `js/tree-view.js`
-- **Table rendering**: `js/table-view.js`
-- **Diagram rendering**: `js/diagram-view.js`
-- **Application logic**: `js/app.js`
-- **Styling**: files under `css/`
-
-Keeping each view in a separate file simplifies updates and testing.
+Each view is now in its own file:
+- Modify tree rendering: `js/tree-view.js`
+- Modify table rendering: `js/table-view.js`
+- Modify diagram rendering: `js/diagram-view.js`
+- Modify app logic: `js/app.js`
+- Modify styles: `css/*.css`

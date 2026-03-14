@@ -2,6 +2,10 @@
   "name": "json-viewer",
   "type": "module",
   "version": "1.0.0",
+  "packageManager": "pnpm@9.5.0",
+  "engines": {
+    "node": ">=20.0"
+  },
   "description": "A powerful JSON visualization tool with Tree, Table, and Diagram views",
   "main": "index.html",
   "scripts": {
